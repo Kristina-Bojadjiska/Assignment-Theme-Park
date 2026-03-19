@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body class="contact-page">
+
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/areas">Areas</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
+        <a href="/special-events">Events</a>
+    </nav>
+    <main class="contact-page">
+        <section class="contact-box">
+            <h2>We would love to hear from you!</h2>
+            <form action="/contact" method="POST" class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        <!-- Location Box -->
+        <section class="location-box">
+            <h2>Our Location</h2>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81079.0087918489!2d-2.155175933350817!3d50.57658773375577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487301000da7067f%3A0x7e43a8244f90b525!2sPondfield%20Cove!5e0!3m2!1sen!2suk!4v1727149113734!5m2!1sen!2suk"
+                    width="300" height="200" style="border: none;" allowfullscreen aria-hidden="false" tabindex="0">
+                </iframe>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-container">
+        <div>
+            <p>&copy; 2024 Theme Park. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

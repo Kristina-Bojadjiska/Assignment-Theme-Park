@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body class="<%= bodyClass %>">
+
+    <header>
+        <h1>Frequently Asked Questions</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/areas">Areas</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
+        <a href="/special-events">Events</a>
+    </nav>
+
+    <main class="faq-page">
+        <section class="faq-box">
+            <h2>Have Questions?</h2>
+            <p>When is the park open? <br> The park is open every day from April to October, 9am to 7pm.</p>
+            <p>Is parking available? <br> Yes, we have ample parking available for all visitors.</p>
+        </section>
+        <section class="faq-box-secondary">
+            <h2>We Have the Answers!</h2>
+            <p>Can we bring our own food? <br> Yes, you can bring your own food, but there are also many dining options available in the park.</p>
+            <p>What age group is the park suitable for? <br> The park offers attractions for all age groups, from thrilling rides to family-friendly activities.</p>
+        </section>
+        <section class="faq-box-form">
+            <h2>Ask a Question</h2>
+            <form action="/submit-question" method="POST">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="question">Your Question:</label>
+                <textarea id="question" name="question" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+  
+    <footer class="footer-container">
+        <div>
+            <p>&copy; 2024 Theme Park. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

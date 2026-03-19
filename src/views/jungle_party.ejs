@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="jungle_party-page">
+    <header>
+        <h1><%= title %></h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/areas">Areas</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
+        <a href="/special-events">Events</a>
+    </nav>
+    <main>
+        <div class="text-box jungle-party-text">
+            <h2><%= title %></h2>
+            <p>"Experience the exuberant ambiance of Adventure Jungle by hosting a memorable party amid lush foliage and a sense of exoticism. Engage in interactive gaming, dance to upbeat tunes, and partake in themed activities that evoke the essence of the jungle. A magical natural setting provides fun and excitement for all ages at the Jungle Party, whether you're swinging through the treetops or discovering secret pathways."</p>
+        
+            <button class="check-availability-btn" onclick="checkAvailability()">Check Availability</button>
+        
+        <!-- Availability Message Container -->
+        <div id="availability-message" class="availability-message" style="display:none;">
+            <p><strong>Good news! There is availability for this event.</strong></p>
+            <p>To make a booking, please call us at <a href="tel:01616849254">0161 684 9254</a> or visit our <a href="/contact">Contact Page</a> to submit a request form. We look forward to hearing from you!</p>
+        </div>
+        </div>
+    </main>
+    <footer class="footer-container">
+        <div>
+            <p>&copy; 2024 Theme Park. All Rights Reserved.</p>
+        </div>
+
+        <script>
+            function checkAvailability() {
+                // Display the availability message
+                document.getElementById('availability-message').style.display = 'block';
+            }
+        </script>
+    </footer>
+</body>
+</html>

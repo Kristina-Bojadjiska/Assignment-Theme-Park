@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Themed Areas</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        /* Inline styles to ensure specific customizations */
+        .areas-page h2 {
+            color: #0d3b66; /* Dark blue for header */
+            font-size: 26px; /* Font size for header */
+        }
+        .area-box h3, .area-box p, .area-box a {
+            text-decoration: none !important;
+            color: #2c2a2a !important; /* Consistent color for all text and links */
+            font-family: Arial, sans-serif !important; /* Consistent font */
+        }
+    </style>
+</head>
+<body class="areas-page">
+    <header>
+        <h1>Themed Areas</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/areas">Areas</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
+        <a href="/special-events">Events</a>
+    </nav>
+
+    <main>
+        <section class="areas-container">
+            <h2>Explore Our Themed Areas</h2>
+            <div class="areas-list">
+                <% areas.forEach(area => { %>
+                    <a href="/areas/<%= area.id %>/attractions" class="area-box">
+                        <div class="area">
+                            <img src="<%= area.image_url %>" alt="<%= area.name %>">
+                            <h3><%= area.name %></h3>
+                            <p><%= area.description %></p>
+                        </div>
+                    </a>
+                <% }); %>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-container">
+        <div>
+            <p>&copy; 2024 Theme Park. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

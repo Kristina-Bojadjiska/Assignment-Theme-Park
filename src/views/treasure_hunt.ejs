@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body class="treasure_hunt-page">
+    <header>
+        <h1>
+            <%= title %>
+        </h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/areas">Areas</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
+        <a href="/special-events">Events</a>
+    </nav>
+    <main>
+        <div class="text-box pirate-treasure-text">
+            <h2>Hunt for Pirate Treasure</h2>
+            <p>"Set out on a fantastic journey through Pirate Bay to find hidden riches! Discover hidden clues, solve
+                difficult puzzles, and navigate through enigmatic coves as you go through this exhilarating adventure.
+                For all aspiring explorers and pirates, the Pirate Treasure Hunt promises a thrilling adventure filled
+                with surprises and excitement around every corner. "</p>
+            <button class="check-availability-btn" onclick="checkAvailability()">Check Availability</button>
+
+            <!-- Availability Message Container -->
+            <div id="availability-message" class="availability-message" style="display:none;">
+                <p><strong>Good news! There is availability for this event.</strong></p>
+                <p>To make a booking, please call us at <a href="tel:01616849254">0161 684 9254</a> or visit our <a href="/contact">Contact Page</a> to submit a request form. We look forward to hearing from you!</p>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="footer-container">
+        <div>
+            <p>&copy; 2024 Theme Park. All Rights Reserved.</p>
+        </div>
+        <script>
+            function checkAvailability() {
+                // Display the availability message
+                document.getElementById('availability-message').style.display = 'block';
+            }
+        </script>
+    </footer>
+</body>
+
+</html>

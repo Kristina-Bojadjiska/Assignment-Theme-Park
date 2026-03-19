@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Theme Park</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="home-page">
+
+    <header>
+        <h1>
+            <%= title %>
+        </h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/areas">Areas</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
+        <a href="/special-events">Events</a>
+    </nav>
+    
+    <main class="home-page">
+        <section>
+            <div class="firework-zone">
+                <div class="fireworks-container"></div>
+            </div>
+            <div class="welcome-section">
+                <h2>Welcome to the most exciting Theme Park!<br>Experience the thrill of a lifetime.</h2>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-container">
+        <div>
+            <p>&copy; 2024 Theme Park. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('.welcome-section').addEventListener('mouseenter', function() {
+            const container = document.querySelector('.fireworks-container');
+            
+            // Clear any previous fireworks
+            container.innerHTML = '';
+    
+            // Increase the number of fireworks for a more dynamic effect
+            for (let i = 0; i < 30; i++) { // Number of fireworks
+                let firework = document.createElement('div');
+                firework.className = 'firework';
+                firework.style.left = `${Math.random() * 100}%`;
+                
+                // Start from 10% to below the navigation bar and extend to 50% of container height
+                firework.style.top = `${10 + Math.random() * 40}%`; 
+                
+                firework.style.width = `${20 + Math.random() * 30}px`; // Randomized size
+                firework.style.height = firework.style.width;
+                
+                // Assign random color to each firework
+                const colors = [
+                    "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,0,0,1) 40%, rgba(255,255,0,0) 70%)",
+                    "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,255,0,1) 40%, rgba(0,0,255,0) 70%)",
+                    "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,255,255,1) 40%, rgba(255,0,255,0) 70%)"
+                ];
+                firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                container.appendChild(firework);
+                
+                // Remove firework after animation ends
+                setTimeout(() => firework.remove(), 1000); // Match duration with animation time
+            }
+        });
+    </script>
+</body>
+</html>

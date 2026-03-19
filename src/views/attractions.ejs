@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractions</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1><%= area.name %> Attractions</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/areas">Areas</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
+        <a href="/special-events">Events</a>
+    </nav>
+
+    <main>
+        <div class="attractions-page">
+            <!-- Left Section with the Central Figure -->
+            <div class="map-section">
+                <div class="central-figure">
+                    <img src="<%= area.central_figure_image %>" alt="Central Figure" class="central-figure-image">
+                </div>
+            </div>
+
+            <!-- Right Section with the Orbiting Attractions -->
+            <div class="attractions-section">
+                <div class="solar-system-container">
+                    <div class="attractions-list">
+                        <% attractions.forEach((attraction, index) => { %>
+                            <div class="attraction-box orbit<%= index + 1 %>">
+                                <img src="<%= attraction.image_url %>" alt="<%= attraction.name %>"
+                                    class="attraction-image">
+                                <div class="attraction-details">
+                                    <h3><%= attraction.name %></h3>
+                                    <p><%= attraction.description %></p>
+                                    <p><strong>Thrill Level:</strong> <%= attraction.thrill_level %></p>
+                                    <p><strong>Age Restriction:</strong> <%= attraction.age_restriction %></p>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Structure (outside the main container to prevent overlap issues) -->
+        <div id="attractionModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="modal-image" src="" alt="Attraction Image" style="width: 100%;">
+                <div id="modal-text"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <div>
+            <p>&copy; 2024 Sunny Smiles Park. All Rights Reserved.</p>
+            <p><a href="/contact">Contact Us</a> | <a href="/privacy-policy">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Modal Functionality -->
+    <script>
+        // JavaScript for modal functionality
+        document.querySelectorAll('.attraction-box').forEach(box => {
+            box.addEventListener('click', function () {
+                var imageUrl = this.querySelector('img').src;
+                var textContent = this.querySelector('.attraction-details').innerHTML;
+
+                // Open modal
+                document.getElementById('attractionModal').style.display = "block";
+                document.getElementById('modal-image').src = imageUrl;
+                document.getElementById('modal-text').innerHTML = textContent;
+            });
+        });
+
+        // Close modal
+        document.querySelector('.close').onclick = function () {
+            document.getElementById('attractionModal').style.display = "none";
+        }
+
+        // Close modal when clicking outside of content
+        window.onclick = function (event) {
+            if (event.target == document.getElementById('attractionModal')) {
+                document.getElementById('attractionModal').style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
